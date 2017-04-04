@@ -364,29 +364,29 @@ int main(){
         // "true" and "false" instead of "1" and "0"
         cin >> randomLimitHigh;
         // repeat the following as long as this attempt failed, presumably because the data type of the user's input was not an element
-        while (! cin.good() || randomLimitHigh < randomLimitLow || randomLimitHigh > 2147483646) {
+        // while (! cin.good() || randomLimitHigh < randomLimitLow || randomLimitHigh > 2147483646) {
 
-                // re-enable the just-disabled cin object
-                cin.clear();
+        //         // re-enable the just-disabled cin object
+        //         cin.clear();
 
-                // from the input buffer, discard up to 80 keystrokes or until the enter key is seen, whichever comes first
-                cin.ignore(80, '\n');
+        //         // from the input buffer, discard up to 80 keystrokes or until the enter key is seen, whichever comes first
+        //         cin.ignore(80, '\n');
 
-                // tell the user what happened, and to try again
-               if(!cin.good()){
-                  cout << "Invalid data type, should be an element ("
-                        << ELEMENT_NAME
-                        << "), try again: ";
-                  } else
-                  cout << "Invalid range type, should be within " << randomLimitLow << " and 2147483646, try again: ";
+        //         // tell the user what happened, and to try again
+        //        if(!cin.good()){
+        //           cout << "Invalid data type, should be an element ("
+        //                 << ELEMENT_NAME
+        //                 << "), try again: ";
+        //           } else
+        //           cout << "Invalid range type, should be within " << randomLimitLow << " and 2147483646, try again: ";
 
-                // attempt to get an input value whose data type is an element
-                //
-                // the boolalpha manipulator is used in case elements are bools, to allow for inputs using the keystroke
-                // sequences of "true" and "false" instead of "1" and "0"
-                  cout << "2nd cin statement";
-                cin >> randomLimitHigh;
-                }
+        //         // attempt to get an input value whose data type is an element
+        //         //
+        //         // the boolalpha manipulator is used in case elements are bools, to allow for inputs using the keystroke
+        //         // sequences of "true" and "false" instead of "1" and "0"
+        //           cout << "2nd cin statement";
+        //         cin >> randomLimitHigh;
+        //         }
         cout << "2nd cin pass";
         // return the valid element value given by the user
         // return randomLimitHigh;
