@@ -58,12 +58,10 @@ struct SalesSlip
   public:
     SalesSlip();
     void getDate();
-    static double salesRepresentativesInfo[20][3];
     void displayMenu();
     void setMenuSelection();
     int getMenuSelection();
     void userCounter(int answer);
-    void salesSlipBootstrap(int choice);
     void setSalesPersonID(int choice);
     double getSalesPersonID();
     void setProductID();
@@ -79,9 +77,8 @@ class Sales
 {
   private:
     string salesPersons[4] = { "Sarah", "Jesse", "Breeanna", "Brittany"};
-    string salesTotals[4];
     string productNames[5] = { "Magic Mouse", "Switch", "Camera", "Paralettes", "Time"};
-    SalesSlip salesSlipContainer[20];
+    SalesSlip salesSlipContainer[20] ;
     string salesSlipSummary[20][3];
     double sarahTotal[5] = {0.00,0.00,0.00,0.00,0.00};
     double jesseTotal[5] = {0.00,0.00,0.00,0.00,0.00};
@@ -92,6 +89,7 @@ class Sales
     int breannaRow;
     int brittanyRow;
   public:
+    Sales();
     void setSalesSlipContainer(SalesSlip);
     void getSalesSlipContainer();
     void setSalesSlipSummary(SalesSlip salesSlipContainer[19]);

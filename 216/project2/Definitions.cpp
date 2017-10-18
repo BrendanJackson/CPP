@@ -17,7 +17,6 @@
 
 /* SalesSlip
 ************************/
-double SalesSlip::salesRepresentativesInfo[20][3];
 SalesSlip::SalesSlip()
 {
   const int MAXLEN = 80;
@@ -196,6 +195,12 @@ double SalesSlip::getProductPrice()
 
 /* Sales
 ************************/
+Sales::Sales()
+{
+  for(int i=0;i<20;i++)
+    for(int j=0;j<20;j++)
+      salesSlipSummary[20][3] = "";
+}
 void Sales::setSalesSlipContainer(SalesSlip slip)
 {
   static int i = 0;
