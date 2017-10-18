@@ -35,7 +35,6 @@ int main()
     slip1.displayMenu();
     slip1.setMenuSelection();
     if (slip1.getMenuSelection() == 5){
-      sales.setSalesSlipSummary( SalesSlip::salesRepresentativesInfo );
       sales.getSalesSlipSummary();
       exit(0);
     }
@@ -44,18 +43,15 @@ int main()
 // !TODO <CODE>is caught somewhere in while, searching for solution</CODE>
     int slipCount = 0;
     do {
-      SalesSlip::salesRepresentativesInfo[i][0] = slip1.getSalesPersonID();
-
       cout << "\nWhat is your product ID (1-5)? ";
       slip1.setProductID();
-      SalesSlip::salesRepresentativesInfo[i][1] = slip1.getProductID();
 
       cout << "\nHow much total sales did you earn from the product? ";
       slip1.setProductPrice();
-      SalesSlip::salesRepresentativesInfo[i][2] = slip1.getProductPrice();
 
-      // !TODO if user selects no, personCounter = 5;
+      sales.setSalesSlipContainer(slip1);
 
+      sales.getSalesSlipSummary();
 
       slipCount++;
       if(slipCount < 5){
@@ -68,7 +64,7 @@ int main()
   }
 
 
-
+  // !TODO what does a more dirct route look like?
 
   cout << endl;
 }

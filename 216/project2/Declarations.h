@@ -32,7 +32,7 @@
 #include <iomanip>
 // dynamic arrays
 #include <vector>
-
+#include <stdlib.h>     /* atof, string to double */
 
 //standard namespace
 using namespace std;
@@ -81,19 +81,27 @@ struct SalesSlip
 class Sales
 {
   private:
-    SalesSlip salesSlipContainer[1];
-    string salesSlipSummary[20][3];
     string salesPersons[4] = { "Sarah", "Jesse", "Breeanna", "Brittany"};
     string salesTotals[4];
     string productNames[5] = { "Magic Mouse", "Switch", "Camera", "Paralettes", "Time"};
-    char initialResponse;
+    SalesSlip salesSlipContainer[20];
+    string salesSlipSummary[20][3];
+    double sarahTotal[5] = {0.00,0.00,0.00,0.00,0.00};
+    double jesseTotal[5] = {0.00,0.00,0.00,0.00,0.00};
+    double breannaTotal[5] = {0.00,0.00,0.00,0.00,0.00};
+    double brittanyTotal[5] = {0.00,0.00,0.00,0.00,0.00};
+    int sarahRow;
+    int jesseRow;
+    int breannaRow;
+    int brittanyRow;
   public:
     void setSalesSlipContainer(SalesSlip);
-    SalesSlip getSalesSlipContainer();
-    void setSalesSlipSummary( double salesRepresentativesInfo[20][3] );
+    void getSalesSlipContainer();
+    void setSalesSlipSummary(SalesSlip salesSlipContainer[19]);
     void getSalesSlipSummary();
-    string setSalesPersons();
-    string getSalesPersons();
-    string setProductNames();
-    string getProductNames();
+    void getTotals();
+    // string setSalesPersons();
+    // string getSalesPersons();
+    // string setProductNames();
+    // string getProductNames();
 };

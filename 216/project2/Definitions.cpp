@@ -74,7 +74,7 @@ double SalesSlip::getSalesRepresentativesInfo()
 {
 
   // !TODO why does array bounds popup on the 2nd array but not the 1st?
-  return salesRepresentativesInfo[20][3];
+  return salesRepresentativesInfo[20][2];
 }
 void SalesSlip::setSalesPersonID(int choice)
 {
@@ -109,42 +109,110 @@ string SalesSlip::getDateOfSale()
   return dateOfSale;
 }
 
+
+
 /* Sales
 ************************/
 void Sales::setSalesSlipContainer(SalesSlip slip)
 {
-  salesSlipContainer[0] = slip;
-}
-SalesSlip Sales::getSalesSlipContainer()
-{
-  return salesSlipContainer[0];
-}
+  static int i = 0;
+  salesSlipContainer[i] = slip;
 
-void Sales::setSalesSlipSummary( double salesRepresentativesInfo[20][3] )
-{
-  int i = 0;
-  while(i <= 20){
-    if(salesRepresentativesInfo[i][0] == 1)
-      salesSlipSummary[i][0] = "Sarah";
-    else if(salesRepresentativesInfo[i][0] == 2)
-      salesSlipSummary[i][0] = "Jesse";
-    else if(salesRepresentativesInfo[i][0] == 3)
-      salesSlipSummary[i][0] = "Breanna";
-    else if(salesRepresentativesInfo[i][0] == 4)
-      salesSlipSummary[i][0] = "Brittany";
+  if (slip.getSalesPersonID() == 1)
+    salesSlipSummary[i][0] = "Sarah";
+  else if (slip.getSalesPersonID() == 2)
+    salesSlipSummary[i][0] = "Jesse";
+  else if (slip.getSalesPersonID() == 3)
+    salesSlipSummary[i][0] = "Breanna";
+  else if (slip.getSalesPersonID() == 4)
+    salesSlipSummary[i][0] = "Brittany";
 
-    salesSlipSummary[i][1] = to_string(salesRepresentativesInfo[i][1]);
-    salesSlipSummary[i][2] = to_string(salesRepresentativesInfo[i][2]);
-    i++;
+  salesSlipSummary[i][1] = to_string(slip.getProductID());
+  salesSlipSummary[i][2] = to_string(slip.getProductPrice());
+  i++;
+}
+void Sales::getTotals()
+{
+  // how do I remove this from a loop?
+  int j = 0;
+  int k = 0;
+  int l = 0;
+  int m = 0;
+  int n = 0;
+  for(int i=0;i <= 20;i++){
+    if (salesSlipSummary[i][0] == "Sarah"){
+      // cout << "\n<string>salesSlipSummary[i][2]: " << salesSlipSummary[i][2]
+      //      << "\n<double>salesSlipSummary[i][2]: " << stod(salesSlipSummary[i][2]);
+      // double price = stod(salesSlipSummary[i][2]);
+      sarahRow = i;
+      sarahTotal[j] = stod(salesSlipSummary[i][2]);;
+      j++;
+    }
+    else if (salesSlipSummary[i][0] == "Jesse"){
+      jesseTotal[k] = stod(salesSlipSummary[i][2]);
+      jesseRow = i;
+      k++;
+    }
+    else if (salesSlipSummary[i][0] == "Breanna"){
+      breannaTotal[l] = stod(salesSlipSummary[i][2]);
+      breannaRow = i;
+      l++;
+    }
+    else if (salesSlipSummary[i][0] == "Brittany"){
+      brittanyTotal[m] = stod(salesSlipSummary[i][2]);
+      brittanyRow = i;
+      m++;
+    }
   }
+
 }
 void Sales::getSalesSlipSummary()
 {
+
+  cout << "\nDOODAD THIRD QUARTER 2016 SALES REPORT" << endl
+       << setw(18) << left << "SALES PERSON" << setw(14) << "PRODUCT"
+       << setw(11) << right << "AMOUNT" << setw(11) << "TOTAL" << endl;
+
+  cout << setw(18) << left << "-----------------"
+       << setw(14) << "-------------"
+       << setw(11) << right << "----------"
+       << setw(11) << "----------";
+
   for (int i = 0;i <= 20;i++){
-    for (int j = 0;j <= 3;j++){
-      cout << "\nsalesSlipSummary" << "[" << i << "]" << "[" << j << "]" << salesSlipSummary[i][j];
+    cout << endl;
+    double sarahGrandTotal = sarahTotal[0]+sarahTotal[1]+sarahTotal[2]+sarahTotal[3]+sarahTotal[4];
+    double jesseGrandTotal = jesseTotal[0]+jesseTotal[1]+jesseTotal[2]+jesseTotal[3]+jesseTotal[4];
+    double breannaGrandTotal = breannaTotal[0]+breannaTotal[1]+breannaTotal[2]+breannaTotal[3]+breannaTotal[4];
+    double brittanyGrandTotal = brittanyTotal[0]+brittanyTotal[1]+brittanyTotal[2]+brittanyTotal[3]+brittanyTotal[4];
+
+    // cout << "\nrow is " << sarahRow << " i is " << i << " sarahTotal is: " << sarahGrandTotal;
+
+    cout << setw(18) << left << salesSlipSummary[i][0]
+         << setw(14) << salesSlipSummary[i][1]
+         << setw(11) << right << setprecision(2) << salesSlipSummary[i][2];
+
+    if (i != sarahRow && jesseRow && i != breannaRow && i != brittanyRow)
+      cout << setw(11) << "";
+    else if (i == sarahRow){
+      getTotals();
+      cout << setw(11) << setprecision(2) << sarahGrandTotal << "\n";
     }
+    else if (i == jesseRow){
+      getTotals();
+      cout << setw(11) << setprecision(2) << jesseGrandTotal << "\n";
+    }
+    else if (i == breannaRow){
+      getTotals();
+      cout << setw(11) << setprecision(2) << breannaGrandTotal << "\n";
+    }
+    else if (i == brittanyRow){
+      getTotals();
+      cout << setw(11) << setprecision(2) << brittanyGrandTotal << "\n";
+    }
+
   }
+
+
 }
 // string Sales::getSalesPersons()
 // {
@@ -156,7 +224,7 @@ void Sales::getSalesSlipSummary()
 // string Sales::setProductNames()
 // {
 // }
-string Sales::getProductNames()
-{
-  return productNames[0];
-}
+// string Sales::getProductNames()
+// {
+//   return productNames[0];
+// }
