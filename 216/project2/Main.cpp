@@ -25,12 +25,10 @@ int counterBrittany = 0;
 ************************/
 int main()
 {
-  char answer;
-  int i = 0; //array counter
-  //!TODO why doesn't method chaining work here?
+  int answer = -1;
   Sales sales;
   SalesSlip slip1;
-
+  
   while (slip1.getMenuSelection() < 5 || slip1.getMenuSelection() > 0){
     slip1.displayMenu();
     slip1.setMenuSelection();
@@ -39,8 +37,6 @@ int main()
       exit(0);
     }
     slip1.setSalesPersonID( slip1.getMenuSelection() );
-    cout << "\nI made it out of the setsales get menu selection dealio";
-// !TODO <CODE>is caught somewhere in while, searching for solution</CODE>
     int slipCount = 0;
     do {
       cout << "\nWhat is your product ID (1-5)? ";
@@ -51,16 +47,25 @@ int main()
 
       sales.setSalesSlipContainer(slip1);
 
-      sales.getSalesSlipSummary();
-
       slipCount++;
       if(slipCount < 5){
         cout << "\nWould you like to fill out another slip for this user?"
-           << "\nType \"y\" for yes and \"n\" for no ";
-        cin >> answer;
+             << "\nType \"1\" for yes and \"0\" for no "
+             << "\n(Choosing no will prevent you from accessing this user again).\n";
+        cin >> boolalpha >> answer;
+
+        // repeat the following as long as this attempt failed,
+        //presumably because the data type of the user's input was not an element
+        while (! cin.good() || answer < 0 || answer > 1) {
+          cout << "\ninvalid try again, "
+               << "\nType \"1\" for yes and \"0\" for no "
+               << "\n(Choosing no will prevent you from accessing this user again).\n";
+          cin >> boolalpha >> answer;
+        }
       }
+      // prevents any one salesperson from having more than 5 slips.
       slip1.userCounter(answer);
-    } while (slipCount < 5 && answer == 'y');
+    } while (slipCount < 5 && answer == 1);
   }
 
 

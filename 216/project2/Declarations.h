@@ -33,7 +33,7 @@
 // dynamic arrays
 #include <vector>
 #include <stdlib.h>     /* atof, string to double */
-
+#include <ctime>
 //standard namespace
 using namespace std;
 
@@ -50,29 +50,26 @@ extern int counterBrittany;
 struct SalesSlip
 {
   private:
+    string date;
     double salesPersonID = 0;
-    double productID = 0;
+    int productID = 0;
     double productPrice = 0.00;
-    string dateOfSale = "10/05/2017";
-    double dailyTotal = 1.00;
     int menuSelection = 0;
   public:
+    SalesSlip();
+    void getDate();
     static double salesRepresentativesInfo[20][3];
     void displayMenu();
     void setMenuSelection();
     int getMenuSelection();
-    void userCounter(char answer);
+    void userCounter(int answer);
     void salesSlipBootstrap(int choice);
-    void setSalesRepresentativesInfo( double salesPersonID, double productID, double productPrice );
-    double getSalesRepresentativesInfo();
     void setSalesPersonID(int choice);
     double getSalesPersonID();
     void setProductID();
     double getProductID();
     void setProductPrice();
     double getProductPrice();
-    void setDateOfSale();
-    string getDateOfSale();
 };
 
 
