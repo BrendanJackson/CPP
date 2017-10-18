@@ -28,7 +28,7 @@ int main()
   int answer = -1;
   Sales sales;
   SalesSlip slip1;
-  
+
   while (slip1.getMenuSelection() < 5 || slip1.getMenuSelection() > 0){
     slip1.displayMenu();
     slip1.setMenuSelection();
@@ -57,6 +57,14 @@ int main()
         // repeat the following as long as this attempt failed,
         //presumably because the data type of the user's input was not an element
         while (! cin.good() || answer < 0 || answer > 1) {
+          // re-enable the just-disabled cin object
+          cin.clear();
+
+          // from the input buffer,
+          //discard up to 80 keystrokes or
+          // until the enter key is seen, whichever comes first
+          cin.ignore(80, '\n');
+
           cout << "\ninvalid try again, "
                << "\nType \"1\" for yes and \"0\" for no "
                << "\n(Choosing no will prevent you from accessing this user again).\n";

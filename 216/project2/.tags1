@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+SalesSlip	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^SalesSlip::SalesSlip()$/;"	function	line:20	class:SalesSlip	signature:()
+getDate	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void SalesSlip::getDate()$/;"	function	line:28	class:SalesSlip	signature:()
+displayMenu	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void SalesSlip::displayMenu()$/;"	function	line:32	class:SalesSlip	signature:()
+setMenuSelection	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void SalesSlip::setMenuSelection()$/;"	function	line:48	class:SalesSlip	signature:()
+getMenuSelection	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^int SalesSlip::getMenuSelection()$/;"	function	line:89	class:SalesSlip	signature:()
+userCounter	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void SalesSlip::userCounter(int answer)$/;"	function	line:93	class:SalesSlip	signature:(int answer)
+setSalesPersonID	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void SalesSlip::setSalesPersonID(int choice)$/;"	function	line:113	class:SalesSlip	signature:(int choice)
+getSalesPersonID	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^double SalesSlip::getSalesPersonID()$/;"	function	line:117	class:SalesSlip	signature:()
+setProductID	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void SalesSlip::setProductID()$/;"	function	line:121	class:SalesSlip	signature:()
+getProductID	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^double SalesSlip::getProductID()$/;"	function	line:153	class:SalesSlip	signature:()
+setProductPrice	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void SalesSlip::setProductPrice()$/;"	function	line:157	class:SalesSlip	signature:()
+getProductPrice	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^double SalesSlip::getProductPrice()$/;"	function	line:189	class:SalesSlip	signature:()
+Sales	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^Sales::Sales()$/;"	function	line:198	class:Sales	signature:()
+setSalesSlipContainer	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void Sales::setSalesSlipContainer(SalesSlip slip)$/;"	function	line:204	class:Sales	signature:(SalesSlip slip)
+getSalesSlipContainer	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void Sales::getSalesSlipContainer()$/;"	function	line:234	class:Sales	signature:()
+getTotals	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void Sales::getTotals()$/;"	function	line:242	class:Sales	signature:()
+getSalesSlipSummary	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void Sales::getSalesSlipSummary()$/;"	function	line:273	class:Sales	signature:()

@@ -84,15 +84,14 @@ class Sales
     double jesseTotal[5] = {0.00,0.00,0.00,0.00,0.00};
     double breannaTotal[5] = {0.00,0.00,0.00,0.00,0.00};
     double brittanyTotal[5] = {0.00,0.00,0.00,0.00,0.00};
-    int sarahRow;
-    int jesseRow;
-    int breannaRow;
-    int brittanyRow;
+    int sarahRow = 0;
+    int jesseRow = 0;
+    int breannaRow = 0;
+    int brittanyRow = 0;
   public:
     Sales();
     void setSalesSlipContainer(SalesSlip);
     void getSalesSlipContainer();
-    void setSalesSlipSummary(SalesSlip salesSlipContainer[19]);
     void getSalesSlipSummary();
     void getTotals();
     // string setSalesPersons();

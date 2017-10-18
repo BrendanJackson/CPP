@@ -1,0 +1,41 @@
+counterSarah	/Library/WebServer/Documents/CPP/216/project2/Main.cpp	/^int counterSarah = 0;$/;"	variable	line:19
+counterJesse	/Library/WebServer/Documents/CPP/216/project2/Main.cpp	/^int counterJesse = 0;$/;"	variable	line:20
+counterBreanna	/Library/WebServer/Documents/CPP/216/project2/Main.cpp	/^int counterBreanna = 0;$/;"	variable	line:21
+counterBrittany	/Library/WebServer/Documents/CPP/216/project2/Main.cpp	/^int counterBrittany = 0;$/;"	variable	line:22
+main	/Library/WebServer/Documents/CPP/216/project2/Main.cpp	/^int main()$/;"	function	line:26	signature:()
+SalesSlip	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^struct SalesSlip$/;"	struct	line:50
+date	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^    string date;$/;"	member	line:53	struct:SalesSlip
+salesPersonID	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^    double salesPersonID = 0;$/;"	member	line:54	struct:SalesSlip
+productID	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^    int productID = 0;$/;"	member	line:55	struct:SalesSlip
+productPrice	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^    double productPrice = 0.00;$/;"	member	line:56	struct:SalesSlip
+menuSelection	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^    int menuSelection = 0;$/;"	member	line:57	struct:SalesSlip
+Sales	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^class Sales$/;"	class	line:76
+salesPersons	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^    string salesPersons[4] = { "Sarah", "Jesse", "Breeanna", "Brittany"};$/;"	member	line:79	class:Sales
+productNames	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^    string productNames[5] = { "Magic Mouse", "Switch", "Camera", "Paralettes", "Time"};$/;"	member	line:80	class:Sales
+salesSlipContainer	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^    SalesSlip salesSlipContainer[20] ;$/;"	member	line:81	class:Sales
+salesSlipSummary	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^    string salesSlipSummary[20][3];$/;"	member	line:82	class:Sales
+sarahTotal	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^    double sarahTotal[5] = {0.00,0.00,0.00,0.00,0.00};$/;"	member	line:83	class:Sales
+jesseTotal	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^    double jesseTotal[5] = {0.00,0.00,0.00,0.00,0.00};$/;"	member	line:84	class:Sales
+breannaTotal	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^    double breannaTotal[5] = {0.00,0.00,0.00,0.00,0.00};$/;"	member	line:85	class:Sales
+brittanyTotal	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^    double brittanyTotal[5] = {0.00,0.00,0.00,0.00,0.00};$/;"	member	line:86	class:Sales
+sarahRow	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^    int sarahRow = 0;$/;"	member	line:87	class:Sales
+jesseRow	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^    int jesseRow = 0;$/;"	member	line:88	class:Sales
+breannaRow	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^    int breannaRow = 0;$/;"	member	line:89	class:Sales
+brittanyRow	/Library/WebServer/Documents/CPP/216/project2/Declarations.h	/^    int brittanyRow = 0;$/;"	member	line:90	class:Sales
+SalesSlip	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^SalesSlip::SalesSlip()$/;"	function	line:20	class:SalesSlip	signature:()
+getDate	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void SalesSlip::getDate()$/;"	function	line:28	class:SalesSlip	signature:()
+displayMenu	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void SalesSlip::displayMenu()$/;"	function	line:32	class:SalesSlip	signature:()
+setMenuSelection	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void SalesSlip::setMenuSelection()$/;"	function	line:48	class:SalesSlip	signature:()
+getMenuSelection	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^int SalesSlip::getMenuSelection()$/;"	function	line:89	class:SalesSlip	signature:()
+userCounter	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void SalesSlip::userCounter(int answer)$/;"	function	line:93	class:SalesSlip	signature:(int answer)
+setSalesPersonID	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void SalesSlip::setSalesPersonID(int choice)$/;"	function	line:113	class:SalesSlip	signature:(int choice)
+getSalesPersonID	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^double SalesSlip::getSalesPersonID()$/;"	function	line:117	class:SalesSlip	signature:()
+setProductID	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void SalesSlip::setProductID()$/;"	function	line:121	class:SalesSlip	signature:()
+getProductID	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^double SalesSlip::getProductID()$/;"	function	line:153	class:SalesSlip	signature:()
+setProductPrice	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void SalesSlip::setProductPrice()$/;"	function	line:157	class:SalesSlip	signature:()
+getProductPrice	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^double SalesSlip::getProductPrice()$/;"	function	line:189	class:SalesSlip	signature:()
+Sales	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^Sales::Sales()$/;"	function	line:198	class:Sales	signature:()
+setSalesSlipContainer	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void Sales::setSalesSlipContainer(SalesSlip slip)$/;"	function	line:204	class:Sales	signature:(SalesSlip slip)
+getSalesSlipContainer	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void Sales::getSalesSlipContainer()$/;"	function	line:234	class:Sales	signature:()
+getTotals	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void Sales::getTotals()$/;"	function	line:242	class:Sales	signature:()
+getSalesSlipSummary	/Library/WebServer/Documents/CPP/216/project2/Definitions.cpp	/^void Sales::getSalesSlipSummary()$/;"	function	line:273	class:Sales	signature:()

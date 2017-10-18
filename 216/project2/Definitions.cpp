@@ -231,6 +231,14 @@ void Sales::setSalesSlipContainer(SalesSlip slip)
   salesSlipSummary[i][2] = productPrice.str();
   i++;
 }
+void Sales::getSalesSlipContainer()
+{
+  for(int i=0;i<20;i++){
+    cout << salesSlipContainer[i].getProductPrice()
+         << salesSlipContainer[i].getSalesPersonID()
+         << salesSlipContainer[i].getProductID();
+  }
+}
 void Sales::getTotals()
 {
   int j = 0;
@@ -241,6 +249,7 @@ void Sales::getTotals()
     if (salesSlipSummary[i][0] == "Sarah"){
       sarahRow = i;
       sarahTotal[j] = stod(salesSlipSummary[i][2]);;
+      // cout << "\nsarahTotal[j]: " << sarahTotal[j];
       j++;
     }
     else if (salesSlipSummary[i][0] == "Jesse"){
@@ -267,7 +276,7 @@ void Sales::getSalesSlipSummary()
   double jesseGrandTotal;
   double breannaGrandTotal;
   double brittanyGrandTotal;
-
+  double GrandTotal;
   cout << "\nDOODAD THIRD QUARTER 2016 SALES REPORT" << endl
        << setw(18) << left << "SALES PERSON" << setw(14) << "PRODUCT"
        << setw(11) << right << "AMOUNT" << setw(11) << "TOTAL" << endl;
@@ -283,15 +292,17 @@ void Sales::getSalesSlipSummary()
     jesseGrandTotal = jesseTotal[0]+jesseTotal[1]+jesseTotal[2]+jesseTotal[3]+jesseTotal[4];
     breannaGrandTotal = breannaTotal[0]+breannaTotal[1]+breannaTotal[2]+breannaTotal[3]+breannaTotal[4];
     brittanyGrandTotal = brittanyTotal[0]+brittanyTotal[1]+brittanyTotal[2]+brittanyTotal[3]+brittanyTotal[4];
+    GrandTotal = sarahGrandTotal+jesseGrandTotal+breannaGrandTotal+brittanyGrandTotal;
 
     cout << setw(18) << left << salesSlipSummary[i][0]
          << setw(14) << salesSlipSummary[i][1]
          << setw(11) << right << salesSlipSummary[i][2];
 
-
+// cout << "\ni " << i << "sarahRow{ " << sarahRow << " }";
     if (i != sarahRow && i != jesseRow && i != breannaRow && i != brittanyRow)
       cout << setw(11) << "";
     else if (i == sarahRow){
+      // cout << "\nEntered sarahRow: " << sarahRow;
       getTotals();
       cout << setw(11) << setprecision(2) << fixed << sarahGrandTotal;
     }
@@ -308,8 +319,10 @@ void Sales::getSalesSlipSummary()
       cout << setw(11) << setprecision(2) << fixed << brittanyGrandTotal;
     }
 
-  }
+  } // End For
 
+  cout << setw(32) << left << "\n\nGRAND TOTAL OF ALL SALES"
+       << setw(11) << right << GrandTotal;
 
 }
 // string Sales::getSalesPersons()
