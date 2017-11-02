@@ -1,0 +1,62 @@
+#include <iostream>
+
+// Declared but not defined, specializations will provide definitions
+template<typename T>
+struct GenericTypeTraits;
+
+template<typename T>
+class Generic
+{
+public:
+	using IdType = typename GenericTypeTraits<T>::IdType;
+
+	void setIdentifier(IdType id)
+	{
+		mType.mIdentifier = id;
+	}
+
+	IdType getIdentifier() const
+	{
+		return mType.mIdentifier;
+	}
+
+private:
+	T mType;
+};
+
+class Type1
+{
+public:
+	int mIdentifier;
+};
+
+template<>
+struct GenericTypeTraits<Type1>
+{
+	using IdType = int;
+};
+
+class Type2
+{
+public:
+	std::string mIdentifier;
+};
+
+template<>
+struct GenericTypeTraits<Type2>
+{
+	using IdType = std::string;
+};
+
+int main()
+{
+	Generic<Type1> t1[5];
+	t1[0].setIdentifier(3);
+	std::cout << t1[0].getIdentifier() << "\n";
+
+	Generic<Type2> t2[5];
+	t2[0].setIdentifier("3");
+	std::cout << t2[0].getIdentifier() << "\n";
+
+	return 0;
+}
